@@ -35,7 +35,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12 pull-left">
                     <div class="blog-single-img"> 
                         @if($about->image)
-                        <img src="{{Voyager::image($about->image)}}" title="" style="height: 550px; object-fit: cover">
+                            <img src="{{Voyager::image($about->image)}}" title="" style="height: 550px; object-fit: cover">
                         @endif  
                         <h2>{{$about->title}}</h2>
                         <ul class="list-inline list-blog-single">
@@ -45,10 +45,8 @@
                         </ul>
                         <p>{!! $about->body !!}</p>
                         <ul class="list-inline list-social-color">
-                            <li><a href="{{setting('social-media.facebook')}}"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="{{setting('social-media.twitter')}}"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="{{setting('social-media.instagram')}}"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="{{setting('social-media.youtube')}}"><i class="fa fa-youtube"></i></a></li>
+                            <li><a target="_blank" href="https://www.facebook.com/sharer.php?u={{url()->current()}}"><i class="fa fa-facebook"></i></a></li>
+                            <li><a target="_blank" href="https://twitter.com/share?url={{url()->current()}}"><i class="fa fa-twitter"></i></a></li>
                         </ul>
                     </div>
                 </div>

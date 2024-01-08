@@ -32,7 +32,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-sm-7 col-xs-12 pull-left">
-                    <div class="blog-single-img"> <img src="{{Voyager::image($post->image)}}" title="" width="750" height="500" style="object-fit: cover">
+                    <div class="blog-single-img"> 
+                        @if($post->image)
+                            <img src="{{Voyager::image($post->image)}}" title="" width="750" height="500" style="object-fit: cover">
+                        @endif
                         <h2>{{$post->title}}</h2>
                         <ul class="list-inline list-blog-single">
                             <li><i class="fa fa-user" aria-hidden="true"></i><a href="javascript:void(0)">Admin</a></li>
@@ -41,10 +44,8 @@
                         </ul>
                         <p>{!! $post->body !!}</p>
                         <ul class="list-inline list-social-color">
-                          <li><a href="{{setting('social-media.facebook')}}"><i class="fa fa-facebook"></i></a></li>
-                          <li><a href="{{setting('social-media.twitter')}}"><i class="fa fa-twitter"></i></a></li>
-                          <li><a href="{{setting('social-media.instagram')}}"><i class="fa fa-instagram"></i></a></li>
-                          <li><a href="{{setting('social-media.youtube')}}"><i class="fa fa-youtube"></i></a></li>
+                            <li><a target="_blank" href="https://www.facebook.com/sharer.php?u={{url()->current()}}"><i class="fa fa-facebook"></i></a></li>
+                            <li><a target="_blank" href="https://twitter.com/share?url={{url()->current()}}"><i class="fa fa-twitter"></i></a></li>
                         </ul>
                     </div>
                 </div>

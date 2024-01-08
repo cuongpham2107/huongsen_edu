@@ -105,6 +105,43 @@ $(function() {
     /*------------------------------------------------------------------
     Owl Carousel for Testimonials
 	------------------------------------------------------------------*/
+    var owl = $("#home-staff");
+    owl.owlCarousel({
+        nav: true,
+        margin: 10,
+        loop: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            450: {
+                items: 1
+            },
+            600: {
+                items: 2
+            },
+            700: {
+                items: 3
+            },
+            1000: {
+                items: 3
+            },
+            1200: {
+                items: 4
+            },
+            1400: {
+                items: 4
+            },
+            1600: {
+                items: 5
+            }
+        }
+    });
+    $(".owl-prev").html('<i class="fa fa-chevron-left"></i>');
+    $(".owl-next").html('<i class="fa fa-chevron-right"></i>');
+    /*------------------------------------------------------------------
+    Owl Carousel for images
+	------------------------------------------------------------------*/
     var owl = $("#home-gallery");
     owl.owlCarousel({
         nav: true,
@@ -139,7 +176,6 @@ $(function() {
     });
     $(".owl-prev").html('<i class="fa fa-chevron-left"></i>');
     $(".owl-next").html('<i class="fa fa-chevron-right"></i>');
-
     /*------------------------------------------------------------------
     FAQ
     ------------------------------------------------------------------*/

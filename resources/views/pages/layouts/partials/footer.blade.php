@@ -1,5 +1,5 @@
 @php
-    $gallery = \App\StaticData::where('status','PUBLISHED')->where('slug','our-gallery')->first();
+    $gallery = \App\StaticData::where('status','PUBLISHED')->where('type','footer-image')->first();
 @endphp
 <div class="footer-wrapper">
   <div class="footer-top-area">
@@ -14,10 +14,10 @@
               <p>{{setting('site.title')}} </p>
               <p>{{setting('site.description')}}</p>
               <ul class="footer-social-menu list-inline">
-                <li><a href="{{setting('social-media.facebook')}}"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="{{setting('social-media.twitter')}}"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="{{setting('social-media.instagram')}}"><i class="fa fa-instagram"></i></a></li>
-                <li><a href="{{setting('social-media.youtube')}}"><i class="fa fa-youtube"></i></a></li>
+                <li><a target="_blank" href="{{setting('social-media.facebook')}}"><i class="fa fa-facebook"></i></a></li>
+                <li><a target="_blank" href="{{setting('social-media.twitter')}}"><i class="fa fa-twitter"></i></a></li>
+                <li><a target="_blank" href="{{setting('social-media.instagram')}}"><i class="fa fa-instagram"></i></a></li>
+                <li><a target="_blank" href="{{setting('social-media.youtube')}}"><i class="fa fa-youtube"></i></a></li>
                 {{-- <li><a href="{{setting('social-media.skype')}}"><i class="fa fa-skype"></i></a></li> --}}
               </ul>
             </div>
@@ -31,7 +31,7 @@
             <div class="footer-widget-content">
               <ul class="footer-widget-menu">
                 <li> <a href="{{url('/')}}">Trang chủ</a> </li>
-                <li> <a href="{{route('about-us.show','ve-chung-toi')}}">Về chúng tôi</a></li>
+                <li> <a href="{{route('page.show','ve-chung-toi')}}">Về chúng tôi</a></li>
                 <li> <a href="{{route('admission-articles.index')}}">Tuyển sinh</a></li>
                 <li> <a href="{{route('posts.index')}}">Tin tức - sự kiện</a> </li>
                 <li> <a href="{{route('unit-information.index')}}">Đơn bị trực thuộc</a> </li>
@@ -79,7 +79,7 @@
   </div>
   <div class="copyright-wrapper">
     <div class="container">
-      <p>&copy; Copyright <span id="year"></span> Nguyen Tat Thanh | All rights reserved. Created by <a href="kennatech.vn">KennaTech</a>.</p>
+      <p>&copy; Copyright <span id="year"></span> CÔNG TY CỔ PHẦN GIÁO DỤC VÀ ĐÀO TẠO HƯƠNG SEN | All rights reserved. Created by <a href="kennatech.vn">KennaTech</a>.</p>
     </div>
   </div>
 </div>

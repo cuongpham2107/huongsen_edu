@@ -42,9 +42,8 @@
                                   <a href="{{route('unit-information.show',$item->slug)}}" class="overlay-box"><span class="icon fa fa-link"></span></a>
                               </div>
                               <div class="blog-content">
-                                  <div class="blog-title"> <span>{{date("d", strtotime($item->created_at))}}<br>
-                                    {{date("M", strtotime($item->created_at))}}</span>
-                                      <h3> <a href="{{route('unit-information.show',$item->slug)}}">{{$item->title}}</a> </h3>
+                                  <div class="blog-title" style="height: unset;">
+                                      <h3 style="padding-left: 0;"><a href="{{route('unit-information.show',$item->slug)}}">{{$item->title}}</a> </h3>
                                   </div>
                                   <p class="line-clamp">{{$item->excerpt}}
                                   </p>

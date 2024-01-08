@@ -12,7 +12,7 @@ class UnitInformationController extends Controller
 
         $category = CategoryUnit::where('slug', $id)->first();
      
-        $posts = UnitInformation::where('status','published')->where('category_unit_id', $category->id)->orderBy('created_at', 'desc')->paginate(6);
+        $posts = UnitInformation::where('status','published')->where('category_unit_id', $category->id)->paginate(6);
         $pageMeta = [
             'title' => setting('site.title') ?? null,
             'meta_description' => setting('site.description') ?? null,
@@ -27,7 +27,7 @@ class UnitInformationController extends Controller
      */
     public function index()
     {
-        $posts = UnitInformation::where('status','published')->orderBy('created_at', 'desc')->paginate(6);
+        $posts = UnitInformation::where('status','published')->paginate(6);
         $pageMeta = [
             'title' => setting('site.title') ?? null,
             'meta_description' => setting('site.description') ?? null,

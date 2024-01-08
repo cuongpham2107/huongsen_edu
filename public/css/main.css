@@ -22,11 +22,11 @@
   align-items: center;
   justify-content: center;
   padding: 10px 15px;
-  color: #f47629;
+  color: #213b7b;
 }
 
 .pagination ul li a:hover,
 .pagination ul li .active {
-  background-color: #f47629;
+  background-color: #213b7b;
   color: #fff;
 }

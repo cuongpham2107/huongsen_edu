@@ -27,8 +27,8 @@
         </div>
     </div>
     <!-- Breadcromb Wrapper End -->
-    <!-- Inner Page Wrapper Start -->
-    <div class="inner-page-wrapper blog-wrapper blog-right">
+    <!-- grid -->
+    {{--<div class="inner-page-wrapper blog-wrapper blog-right">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-sm-7 pull-left">
@@ -62,39 +62,46 @@
                 <div class="col-md-4 col-sm-5 col-xs-12 pull-right">
                     <aside>
                         @include('pages.layouts.partials.category')
-                        {{-- <div class="panel panel-default panel-sidebar ">
-                            <div class="panel-heading">
-                                <h3><span class="title-about">Popular Classes</span> </h3>
-                            </div>
-                            <div class="panel-body p0 bn">
-                                <ul class="list-unstyled list-panel">
-                                    <li> <a href="javascript:void(0)"> <span class="list-image"><img
-                                                    src="images/sidebar-1.jpg" alt=""
-                                                    class="img-responsive"></span>
-                                            <sapn class="list-title-info">Mauris semper mass feugiat facilisis.
-                                                <small>March 3, 2018</small></sapn>
-                                        </a> </li>
-                                    <li> <a href="javascript:void(0)"> <span class="list-image"><img
-                                                    src="images/sidebar-2.jpg" alt="Image blog"
-                                                    class="img-responsive"></span>
-                                            <sapn class="list-title-info">Mauris semper mass feugiat facilisis.
-                                                <small>April 4, 2018</small></sapn>
-                                        </a> </li>
-                                    <li> <a href="javascript:void(0)"> <span class="list-image"><img
-                                                    src="images/sidebar-3.jpg" alt="Image blog"
-                                                    class="img-responsive"></span>
-                                            <sapn class="list-title-info">Mauris semper mass feugiat facilisis. <small>May
-                                                    4, 2018</small></sapn>
-                                        </a> </li>
-                                </ul>
-                            </div>
-                        </div> --}}
                     </aside>
                 </div>
             </div>
         </div>
+    </div>--}}
+    <!-- grid -->
+    <!-- list -->
+    <div class="inner-page-wrapper blog-wrapper blog-full-width">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    @foreach ($posts as $item)
+                    <div class="blog-list clearfix">
+                        <div class="blog-list-img">
+                            <a href="{{route('posts.show',$item->slug)}}">
+                                <img src="{{ Voyager::image($item->thumbnail('thumb', 'image')) }}" alt="{{$item->title}}" class="img-responsive" title="">
+                            </a>
+                            <span class="sticker-round ">{{date("d", strtotime($item->created_at))}} <br>{{date("M", strtotime($item->created_at))}}</span>
+                        </div>
+                        <div class="blog-list-details">
+                            <a href="{{route('posts.show',$item->slug)}}">
+                                <h4>{{$item->title}}</h4>
+                            </a>
+                            <ul class="list-inline list-blog">
+                                <li><i class="far fa-clock"></i><a href="{{route('posts.show',$item->slug)}}">{{date("d/m/Y", strtotime($item->created_at))}}</a></li>
+                            </ul>
+                            <p>{{$item->excerpt}}</p>
+                            <a href="{{route('posts.show',$item->slug)}}" class="btn">Xem thêm</a></div>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    {{ $posts->links('pages.layouts.partials.paginate') }}
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- Inner Page Wrapper End -->
+    <!-- list -->
 @endsection
 
 @section('js')

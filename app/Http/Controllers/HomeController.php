@@ -7,6 +7,7 @@ use TCG\Voyager\Models\Page;
 use TCG\Voyager\Models\Post;
 use App\Banner;
 use App\StaticData;
+use App\UnitInformation;
 
 class HomeController extends Controller
 {
@@ -19,10 +20,10 @@ class HomeController extends Controller
     {
        
         $about_us = Page::where('status','ACTIVE')->where('slug','ve-chung-toi')->first();
-        $our_blog = Post::where('status','PUBLISHED')->limit(3)->get();
-        $our_gallery = StaticData::where('status','PUBLISHED')->where('slug','our-gallery')->first();
+        $our_blog = Post::where('status','PUBLISHED')->orderBy('featured', 'desc')->limit(3)->get();
+        $our_gallery = StaticData::where('status','PUBLISHED')->where('type','home-image')->first();
         $admission_articles = StaticData::where('status','PUBLISHED')->where('type','tuyen-sinh')->get();
-        $our_team = StaticData::where('status','PUBLISHED')->where('type','our-team')->get();
+        $our_team = UnitInformation::where('status','PUBLISHED')->where('featured',1)->get();
         $banner_image = \App\Banner::where('status','PUBLISHED')->where('type','image-home')->first();
         return view('pages.home.index')
             ->with(compact(

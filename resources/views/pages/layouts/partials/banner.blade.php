@@ -95,7 +95,7 @@
           <div class="item slide{{$key+1}} @if($key == 0) active @endif" style="background-image: url({{Voyager::image($item->background)}})">
             <div class="row">
               <div class="container">
-                <div class="col-md-4 col-sm-5 text-center hidden-sm hidden-md hidden-lg"> <img
+                {{-- <div class="col-md-4 col-sm-5 text-center hidden-sm hidden-md hidden-lg"> <img
                     data-animation="animated zoomInLeft" src="{{Voyager::image($item->background)}}" alt=""> </div>
                 <div class="col-md-8 col-sm-7 text-left">
                   <h1 data-animation="animated bounceInLeft" class="">{{$item->name}}</h1>
@@ -103,7 +103,7 @@
                   <a class="btn btn-hero" data-animation="animated bounceInLeft" href="{{$item->link}}">Dịch vụ</a>
                 </div>
                 <div class="col-md-4 col-sm-5 text-right hidden-xs"> <img data-animation="animated zoomInLeft"
-                    src="{{Voyager::image($item->image)}}" alt=""> </div>
+                    src="{{Voyager::image($item->image)}}" alt=""> </div> --}}
               </div>
             </div>
           </div>
@@ -111,8 +111,8 @@
         
        
       </div>
-      <!-- End Wrapper for slides--> <a class="left carousel-control" href="#carousel-example-generic" role="button"
-        data-slide="prev"> <i class="fa fa-angle-left"></i><span class="sr-only">Trước</span> </a> <a
+      <!-- End Wrapper for slides--> <a style="background-image: none" class="left carousel-control" href="#carousel-example-generic" role="button"
+        data-slide="prev"> <i class="fa fa-angle-left"></i><span class="sr-only">Trước</span> </a> <a style="background-image: none"
         class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next"> <i
           class="fa fa-angle-right"></i><span class="sr-only">Kế tiếp</span> </a>
     </div>

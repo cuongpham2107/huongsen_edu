@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use TCG\Voyager\Models\Page;
+use App\StaticData;
+use App\Teacher;
 
 class AboutUsController extends Controller
 {
@@ -87,5 +89,23 @@ class AboutUsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function staff($id)
+    {
+        $our_team = Teacher::all();
+        $about = Page::where('status','ACTIVE')->where('slug', $id)->first();
+        $pageMeta = [
+            'title' => $about->title ?? null,
+            'meta_description' => $about->excerpt ?? null,
+            'image' => $about->image ?? setting('site.logo')
+        ];
+        return view('pages.about-us.staff')->with(compact('about', 'our_team','pageMeta'));
     }
 }

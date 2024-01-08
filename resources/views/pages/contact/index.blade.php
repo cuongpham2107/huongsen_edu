@@ -28,7 +28,7 @@
 </div>
 <!-- Breadcromb Wrapper End --> 
 <!-- Inner Page Wrapper Start -->
-<div class="inner-page-wrapper contact-wrapper">
+<div class="inner-page-wrapper contact-wrapper" style="padding: 80px 0 0 0;">
   <div class="container">
   <div class="row">
   <div class="col-md-8">

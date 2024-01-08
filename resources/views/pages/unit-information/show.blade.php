@@ -41,10 +41,8 @@
                         </ul>
                         <p>{!! $post->body !!}</p>
                         <ul class="list-inline list-social-color">
-                          <li><a href="{{setting('social-media.facebook')}}"><i class="fa fa-facebook"></i></a></li>
-                          <li><a href="{{setting('social-media.twitter')}}"><i class="fa fa-twitter"></i></a></li>
-                          <li><a href="{{setting('social-media.instagram')}}"><i class="fa fa-instagram"></i></a></li>
-                          <li><a href="{{setting('social-media.youtube')}}"><i class="fa fa-youtube"></i></a></li>
+                            <li><a target="_blank" href="https://www.facebook.com/sharer.php?u={{url()->current()}}"><i class="fa fa-facebook"></i></a></li>
+                            <li><a target="_blank" href="https://twitter.com/share?url={{url()->current()}}"><i class="fa fa-twitter"></i></a></li>
                         </ul>
                     </div>
                 </div>
